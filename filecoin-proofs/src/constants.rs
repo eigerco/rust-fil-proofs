@@ -110,7 +110,7 @@ lazy_static! {
             (SECTOR_SIZE_8_MIB, 2),
             (SECTOR_SIZE_16_MIB, 2),
             (SECTOR_SIZE_512_MIB, 2),
-            (SECTOR_SIZE_1_GIB, 6),
+            (SECTOR_SIZE_1_GIB, 100),
             (SECTOR_SIZE_32_GIB, 2349), // this gives 125,279,217 constraints, fitting in a single partition
             (SECTOR_SIZE_64_GIB, 2300), // this gives 129,887,900 constraints, fitting in a single partition
         ]
