@@ -124,7 +124,7 @@ pub(crate) const fn get_porep_interactive_minimum_challenges(sector_size: u64) -
     match sector_size {
         SECTOR_SIZE_2_KIB | SECTOR_SIZE_4_KIB | SECTOR_SIZE_16_KIB | SECTOR_SIZE_32_KIB
         | SECTOR_SIZE_8_MIB | SECTOR_SIZE_16_MIB | SECTOR_SIZE_512_MIB => 2,
-        SECTOR_SIZE_1_GIB => SECTOR_SIZE_32_GIB | SECTOR_SIZE_64_GIB => 176,
+        SECTOR_SIZE_1_GIB | SECTOR_SIZE_32_GIB | SECTOR_SIZE_64_GIB => 176,
         _ => panic!("invalid sector size"),
     }
 }
