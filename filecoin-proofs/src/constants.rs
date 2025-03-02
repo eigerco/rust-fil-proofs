@@ -71,7 +71,7 @@ lazy_static! {
             (SECTOR_SIZE_8_MIB, 1),
             (SECTOR_SIZE_16_MIB, 1),
             (SECTOR_SIZE_512_MIB, 1),
-            (SECTOR_SIZE_1_GIB, 1),
+            (SECTOR_SIZE_1_GIB, 10),
             (SECTOR_SIZE_32_GIB, 10),
             (SECTOR_SIZE_64_GIB, 10),
         ]
@@ -88,7 +88,7 @@ lazy_static! {
             (SECTOR_SIZE_8_MIB, 2),
             (SECTOR_SIZE_16_MIB, 2),
             (SECTOR_SIZE_512_MIB, 2),
-            (SECTOR_SIZE_1_GIB, 2),
+            (SECTOR_SIZE_1_GIB, 11),
             (SECTOR_SIZE_32_GIB, 11),
             (SECTOR_SIZE_64_GIB, 11),
         ]
@@ -108,7 +108,7 @@ lazy_static! {
             (SECTOR_SIZE_8_MIB, 2),
             (SECTOR_SIZE_16_MIB, 2),
             (SECTOR_SIZE_512_MIB, 2),
-            (SECTOR_SIZE_1_GIB, 2),
+            (SECTOR_SIZE_1_GIB, 2349),
             (SECTOR_SIZE_32_GIB, 2349), // this gives 125,279,217 constraints, fitting in a single partition
             (SECTOR_SIZE_64_GIB, 2300), // this gives 129,887,900 constraints, fitting in a single partition
         ]
@@ -123,8 +123,8 @@ lazy_static! {
 pub(crate) const fn get_porep_interactive_minimum_challenges(sector_size: u64) -> usize {
     match sector_size {
         SECTOR_SIZE_2_KIB | SECTOR_SIZE_4_KIB | SECTOR_SIZE_16_KIB | SECTOR_SIZE_32_KIB
-        | SECTOR_SIZE_8_MIB | SECTOR_SIZE_16_MIB | SECTOR_SIZE_512_MIB | SECTOR_SIZE_1_GIB => 2,
-        SECTOR_SIZE_32_GIB | SECTOR_SIZE_64_GIB => 176,
+        | SECTOR_SIZE_8_MIB | SECTOR_SIZE_16_MIB | SECTOR_SIZE_512_MIB => 2,
+        SECTOR_SIZE_1_GIB | SECTOR_SIZE_32_GIB | SECTOR_SIZE_64_GIB => 176,
         _ => panic!("invalid sector size"),
     }
 }
