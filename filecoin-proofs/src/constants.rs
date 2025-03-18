@@ -108,7 +108,7 @@ lazy_static! {
             (SECTOR_SIZE_8_MIB, 2),
             (SECTOR_SIZE_16_MIB, 2),
             (SECTOR_SIZE_512_MIB, 2),
-            (SECTOR_SIZE_1_GIB, 25), // small enough so it's verifiable in 2-3 secs on-chain.
+            (SECTOR_SIZE_1_GIB, 25), // performance tests revealed that only ~25 partitions can be verified on-chain using WASM with Polkadot's 6sec block times.
             (SECTOR_SIZE_32_GIB, 2349), // this gives 125,279,217 constraints, fitting in a single partition
             (SECTOR_SIZE_64_GIB, 2300), // this gives 129,887,900 constraints, fitting in a single partition
         ]
